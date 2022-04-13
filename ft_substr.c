@@ -6,7 +6,7 @@
 /*   By: zmartine <zmartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 12:13:32 by zmartine          #+#    #+#             */
-/*   Updated: 2022/04/12 10:54:16 by zmartine         ###   ########.fr       */
+/*   Updated: 2022/04/13 11:11:33 by zmartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 	size_t	j;
 
-	if (len > strlen(s))
-		len = strlen(s);
+	if (len > ft_strlen(s))
+		len = ft_strlen(s);
 	str = (char *)malloc(sizeof(*s) * (len + 1));
 	if (!str || !s)
 		return (NULL);

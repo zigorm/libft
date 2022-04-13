@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmartine <zmartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/12 10:29:46 by zmartine          #+#    #+#             */
-/*   Updated: 2022/04/12 16:18:46 by zmartine         ###   ########.fr       */
+/*   Created: 2022/04/13 10:41:08 by zmartine          #+#    #+#             */
+/*   Updated: 2022/04/13 10:59:03 by zmartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* #include <stdio.h>
-#include <stdlib.h>
-#include <stdint.h>
-
-void	*ft_calloc(size_t count, size_t size);
-
-int	main(void)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	printf("%s", ft_calloc(SIZE_MAX, SIZE_MAX));
-	// calloc(SIZE_MAX, SIZE_MAX);
-	write(1, "\n", 1);
-	return (0);
-} */
+	char	*mapi;
+	size_t	i;
 
-void	*ft_calloc(size_t count, size_t size)
-{
-	void	*str;
-
-	str = (void *)malloc(count * sizeof(size));
-	if (!str)
+	i = 0;
+	if (!s || !f)
 		return (NULL);
-	ft_bzero(str, count * size);
-	return (str);
+	mapi = malloc(ft_strlen(s) + 1);
+	if (!mapi)
+		return (NULL);
+	while (s[i])
+	{
+		mapi[i] = f(i, s[i]);
+		i++;
+	}
+	mapi[i] = '\0';
+	return (mapi);
 }

@@ -1,38 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmartine <zmartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/12 10:29:46 by zmartine          #+#    #+#             */
-/*   Updated: 2022/04/12 16:18:46 by zmartine         ###   ########.fr       */
+/*   Created: 2022/04/13 11:14:36 by zmartine          #+#    #+#             */
+/*   Updated: 2022/04/13 11:18:03 by zmartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* #include <stdio.h>
-#include <stdlib.h>
-#include <stdint.h>
-
-void	*ft_calloc(size_t count, size_t size);
+/* void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+void	f(unsigned int a, char *c);
 
 int	main(void)
 {
-	printf("%s", ft_calloc(SIZE_MAX, SIZE_MAX));
-	// calloc(SIZE_MAX, SIZE_MAX);
-	write(1, "\n", 1);
-	return (0);
+	char	c[] = "hola";
+
+	ft_striteri(c, f);
+}
+
+void	f(unsigned int a, char *c)
+{
+	printf("%d", a);
+	printf("%s", c);
 } */
 
-void	*ft_calloc(size_t count, size_t size)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	void	*str;
+	size_t	i;
 
-	str = (void *)malloc(count * sizeof(size));
-	if (!str)
-		return (NULL);
-	ft_bzero(str, count * size);
-	return (str);
+	i = 0;
+	while (s[i])
+	{
+		f(i, &s[i]);
+		i++;
+	}
 }
