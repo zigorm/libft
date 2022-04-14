@@ -1,38 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmartine <zmartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/12 10:29:46 by zmartine          #+#    #+#             */
-/*   Updated: 2022/04/14 13:46:57 by zmartine         ###   ########.fr       */
+/*   Created: 2022/04/14 11:18:04 by zmartine          #+#    #+#             */
+/*   Updated: 2022/04/14 12:54:24 by zmartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-/* #include <stdio.h>
-#include <stdlib.h>
-#include <stdint.h>
-
-void	*ft_calloc(size_t count, size_t size);
-
-int	main(void)
+/*
+* Create a new 'node' to the start of the list.
+* Parameter 'lst' is the pointer address to the first node in the list.
+* Parameter 'new' is the pointer to the new node.
+*/
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	printf("%s", ft_calloc(SIZE_MAX, SIZE_MAX));
-	// calloc(SIZE_MAX, SIZE_MAX);
-	write(1, "\n", 1);
-	return (0);
-} */
-
-void	*ft_calloc(size_t count, size_t size)
-{
-	void	*str;
-
-	str = (void *)malloc(count * size);
-	if (!str)
-		return (NULL);
-	ft_bzero(str, count * size);
-	return (str);
+	if (lst && new)
+	{
+		new->next = *lst;
+		*lst = new;
+	}
 }

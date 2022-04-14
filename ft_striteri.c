@@ -6,7 +6,7 @@
 /*   By: zmartine <zmartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 11:14:36 by zmartine          #+#    #+#             */
-/*   Updated: 2022/04/13 11:18:03 by zmartine         ###   ########.fr       */
+/*   Updated: 2022/04/13 16:09:45 by zmartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,12 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	size_t	i;
 
 	i = 0;
-	while (s[i])
+	if (s)
 	{
-		f(i, &s[i]);
-		i++;
-	}
+		while (s[i])
+		{	
+			f(i, &s[i]);
+			i++;
+		}
+	}	
 }

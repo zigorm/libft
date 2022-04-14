@@ -6,7 +6,7 @@
 /*   By: zmartine <zmartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 14:09:16 by zmartine          #+#    #+#             */
-/*   Updated: 2022/04/13 10:31:38 by zmartine         ###   ########.fr       */
+/*   Updated: 2022/04/13 13:29:31 by zmartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,7 @@ int	ft_atoi(const char *str)
 	sign = 1;
 	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\f' || str[i] == '\r'
 		|| str[i] == '\t' || str[i] == '\v')
-	{
 		i++;
-	}
 	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')

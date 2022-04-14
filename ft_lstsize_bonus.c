@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmartine <zmartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/12 10:29:46 by zmartine          #+#    #+#             */
-/*   Updated: 2022/04/14 13:46:57 by zmartine         ###   ########.fr       */
+/*   Created: 2022/04/14 16:27:14 by zmartine          #+#    #+#             */
+/*   Updated: 2022/04/14 16:30:35 by zmartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* #include <stdio.h>
-#include <stdlib.h>
-#include <stdint.h>
-
-void	*ft_calloc(size_t count, size_t size);
-
-int	main(void)
+/*
+ * Counts the number of nodes in the list
+ *
+ * Parameter 'lst' is the beginning of the list.
+ *
+ * Parameter 'size' is length of the list.
+ */
+int	ft_lstsize(t_list *lst)
 {
-	printf("%s", ft_calloc(SIZE_MAX, SIZE_MAX));
-	// calloc(SIZE_MAX, SIZE_MAX);
-	write(1, "\n", 1);
-	return (0);
-} */
+	int	size;
 
-void	*ft_calloc(size_t count, size_t size)
-{
-	void	*str;
-
-	str = (void *)malloc(count * size);
-	if (!str)
-		return (NULL);
-	ft_bzero(str, count * size);
-	return (str);
+	size = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		size++;
+	}
+	return (size);
 }

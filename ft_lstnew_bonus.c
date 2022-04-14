@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmartine <zmartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/12 10:29:46 by zmartine          #+#    #+#             */
-/*   Updated: 2022/04/14 13:46:57 by zmartine         ###   ########.fr       */
+/*   Created: 2022/04/14 11:18:04 by zmartine          #+#    #+#             */
+/*   Updated: 2022/04/14 14:11:09 by zmartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+/*
+* Create a new 'node' in the list.
+* The 'content' variable is initialized with the value
+  of the 'content' parameter.
+* The variable 'next', with value NULL.
+*/
 
-/* #include <stdio.h>
-#include <stdlib.h>
-#include <stdint.h>
-
-void	*ft_calloc(size_t count, size_t size);
-
-int	main(void)
+t_list	*ft_lstnew(void *content)
 {
-	printf("%s", ft_calloc(SIZE_MAX, SIZE_MAX));
-	// calloc(SIZE_MAX, SIZE_MAX);
-	write(1, "\n", 1);
-	return (0);
-} */
+	t_list	*newnodo;
 
-void	*ft_calloc(size_t count, size_t size)
-{
-	void	*str;
-
-	str = (void *)malloc(count * size);
-	if (!str)
+	newnodo = malloc(sizeof(t_list));
+	if (!newnodo)
 		return (NULL);
-	ft_bzero(str, count * size);
-	return (str);
+	newnodo->content = content;
+	newnodo->next = NULL;
+	return (newnodo);
 }
