@@ -6,7 +6,7 @@
 /*   By: zmartine <zmartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 16:00:52 by zmartine          #+#    #+#             */
-/*   Updated: 2022/04/12 13:13:13 by zmartine         ###   ########.fr       */
+/*   Updated: 2022/04/14 17:59:56 by zmartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,6 @@
 
 /* #include <stdio.h>
 #include <string.h>
-
-* @counts how many chars from set are at start from trim
-*
-* @param {set} String with the chars to delete
-* @param {trim} Original string to trimmer from
-*
-* @return {start} Number of positions to ignore from start
-
-static size_t	trimstart(char const *set, char const	*trim);
-static size_t	trimend(char const *set, char const	*trim);
-char	*ft_strtrim(char const *s1, char const *set);
 
 int	main(void)
 {
@@ -50,14 +39,6 @@ static size_t	trimstart(char const *set, char const	*trim)
 	return (start);
 }
 
-/*
- * Counts how many chars from set are at end from trim
- *
- * @param {set} String with the chars to delete
- * @param {trim} Original string to trimmer from
- *
- * @return {end} Number of positions to ignore from end
- */
 static size_t	trimend(char const *set, char const	*trim)
 {
 	size_t	length;
@@ -76,15 +57,6 @@ static size_t	trimend(char const *set, char const	*trim)
 	return (end);
 }
 
-/*
- * Deletes all characters from string 'set' in s1 until
- * a char not included in 'set' is found.
- *
- * @param {s1} String to search in
- * @param {set} String with the char to delete in s1
- *
- * @return {trim} Trimmed string 's1' according to 'set' chars.
- */
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	start;

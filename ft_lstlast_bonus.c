@@ -6,7 +6,7 @@
 /*   By: zmartine <zmartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 16:42:05 by zmartine          #+#    #+#             */
-/*   Updated: 2022/04/14 17:01:33 by zmartine         ###   ########.fr       */
+/*   Updated: 2022/04/15 12:51:44 by zmartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 */
 t_list	*ft_lstlast(t_list *lst)
 {
+	if (!lst)
+		return (NULL);
 	while (lst)
 	{
 		if (lst->next == NULL)

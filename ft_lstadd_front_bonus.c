@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmartine <zmartine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/14 11:18:04 by zmartine          #+#    #+#             */
-/*   Updated: 2022/04/14 12:54:24 by zmartine         ###   ########.fr       */
+/*   Created: 2022/04/15 15:50:19 by zmartine          #+#    #+#             */
+/*   Updated: 2022/04/15 15:50:23 by zmartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 */
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (lst && new)
+	if (new != NULL)
 	{
 		new->next = *lst;
 		*lst = new;
